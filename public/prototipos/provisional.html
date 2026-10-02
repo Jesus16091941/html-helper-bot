@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VeciRed — Pantalla provisional</title>
+<style>
+:root{--primary:#001428;--primary-2:#0f2942;--secondary:#006a61;--bg:#f8f9ff;--muted:#43474d;--text:#0b1c30}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+header{background:#fff;border-bottom:1px solid rgba(195,198,206,.55);padding:0 24px;min-height:72px;display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--primary)}
+.mark{width:38px;height:38px;border-radius:10px;background:var(--primary-2);color:#fff;display:grid;place-items:center}
+main{flex:1;display:grid;place-items:center;padding:40px 24px}
+.card{background:#fff;border:1px solid rgba(195,198,206,.65);border-radius:18px;padding:36px;max-width:520px;text-align:center;box-shadow:0 2px 8px rgba(15,41,66,.05)}
+.tag{display:inline-block;background:rgba(0,106,97,.1);color:var(--secondary);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;margin-bottom:14px}
+h1{margin:0 0 10px;font-size:28px}p{color:var(--muted);line-height:1.6;margin:0 0 24px}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btns a{padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px}
+.p{background:var(--primary);color:#fff}.s{border:1px solid #c3c6ce;color:var(--primary)}
+</style>
+</head>
+<body>
+<header><span class="mark">V</span>VeciRed</header>
+<main><div class="card">
+<span class="tag">Pantalla provisional</span>
+<h1 id="t">Sección</h1>
+<p>Esta interfaz aún no está diseñada en el prototipo. Se muestra aquí para que el enlace no quede sin destino.</p>
+<div class="btns"><a class="p" id="back" href="index.html">← Volver</a><a class="s" href="index.html">Índice de pantallas</a></div>
+</div></main>
+<script>
+var q=new URLSearchParams(location.search);var t=q.get("t")||"Sección";
+document.getElementById("t").textContent=t;document.title="VeciRed — "+t;
+var f=q.get("from");if(f&&/^INT-\d\d$/.test(f))document.getElementById("back").href=f+".html";
+</script>
+</body>
+</html>
